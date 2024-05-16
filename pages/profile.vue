@@ -8,7 +8,7 @@
           <div class="text-3xl text-white pr-7 font-bold tracking-wider">
             BALAJI
           </div>
-          <div class="text-xl text-white pr-7">WEB DEVELOPER</div>
+          <div class="text-xl text-white pr-7">FRONT END DEVELOPER</div>
           <Icon
             class="h-8 w-8 text-white pr-7"
             name="material-symbols:code"
@@ -408,3 +408,4 @@ export default {
   },
 };
 </script>
+<style lang=""></style>
