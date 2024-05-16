@@ -1,16 +1,16 @@
 <template>
   <div class="flex flex-col h-full gap-4">
-    <div class="flex items-center justify-center w-full py-10">
+    <div class="flex items-center justify-center w-full pt-5 pb-20">
       <div
-        class="flex flex-wrap justify-between items-center shadow-lg w-full md:w-[7in] md:h-[9.25in]"
+        class="flex flex-wrap justify-between items-center w-full md:w-[7in] md:h-[9.25in]"
       >
-        <div class="flex flex-col md:w-7/12 w-full bg-blue-900 px-7 py-9 h-full">
+        <div class="flex flex-col md:w-7/12 w-full bg-blue-900 rounded-t-xl md:rounded-r-none md:rounded-s-xl px-7 py-9 h-full">
           <div class="text-3xl text-white pr-7 font-bold tracking-wider">
             BALAJI
           </div>
           <div class="text-xl text-white pr-7">FRONT END DEVELOPER</div>
           <Icon
-            class="h-8 w-8 text-white pr-7"
+            class="h-8 w-8 text-white"
             name="material-symbols:code"
           ></Icon>
           <div
@@ -92,7 +92,7 @@
             class="w-[40px] bg-white h-full rotate-45 -mt-9 -ml-4"
           ></div>
       </div> -->
-        <div class=" md:w-5/12 w-full bg-white flex flex-col py-9 h-full">
+        <div class=" md:w-5/12 w-full bg-white flex flex-col py-9 h-full  rounded-b-xl md:rounded-l-none md:rounded-e-xl">
           <div class="flex w-full justify-center mb-10 pt-5">
             <div
               class="w-[180px] h-[180px] overflow-hidden transform bg-black rounded-xl rotate-45"
@@ -154,7 +154,7 @@
                         stroke-width="10"
                         fill="none"
                         stroke-dasharray="283"
-                        stroke-dashoffset="70"
+                        stroke-dashoffset="40"
                       />
                     </svg>
                     <div
@@ -186,13 +186,13 @@
                         stroke-width="10"
                         fill="none"
                         stroke-dasharray="283"
-                        stroke-dashoffset="70"
+                        stroke-dashoffset="20"
                       />
                     </svg>
                     <div
                       class="absolute inset-0 flex items-center justify-center"
                     >
-                      <span class="text-xs text-blue-800 font-bold">JAVA</span>
+                      <span class="text-xs text-blue-800 font-bold">JS</span>
                     </div>
                   </div>
                 </div>
@@ -218,7 +218,7 @@
                         stroke-width="10"
                         fill="none"
                         stroke-dasharray="283"
-                        stroke-dashoffset="70"
+                        stroke-dashoffset="0"
                       />
                     </svg>
                     <div
@@ -250,7 +250,7 @@
                         stroke-width="10"
                         fill="none"
                         stroke-dasharray="283"
-                        stroke-dashoffset="70"
+                        stroke-dashoffset="20"
                       />
                     </svg>
                     <div
@@ -282,13 +282,13 @@
                         stroke-width="10"
                         fill="none"
                         stroke-dasharray="283"
-                        stroke-dashoffset="70"
+                        stroke-dashoffset="140"
                       />
                     </svg>
                     <div
                       class="absolute inset-0 flex items-center justify-center"
                     >
-                      <span class="text-xs text-blue-800 font-bold">SWIFT</span>
+                      <span class="text-xs text-blue-800 font-bold">VUE</span>
                     </div>
                   </div>
                 </div>
@@ -314,13 +314,13 @@
                         stroke-width="10"
                         fill="none"
                         stroke-dasharray="283"
-                        stroke-dashoffset="70"
+                        stroke-dashoffset="140"
                       />
                     </svg>
                     <div
                       class="absolute inset-0 flex items-center justify-center"
                     >
-                      <span class="text-xs text-blue-800 font-bold">RUBY</span>
+                      <span class="text-xs text-blue-800 font-bold">NUXT</span>
                     </div>
                   </div>
                 </div>
