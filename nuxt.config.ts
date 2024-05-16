@@ -6,5 +6,9 @@ export default defineNuxtConfig({
   },
   css: [
     '@/assets/scss/style.scss'
-  ]
+  ],
+  router: {
+    base: '/balaji_ksk_git/'
+  }
 })
+// 
