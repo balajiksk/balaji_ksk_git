@@ -1,101 +1,370 @@
 <template>
   <div class="flex flex-col h-full gap-4">
-    <img src="/resume.avif" />
-    <div class="flex justify-between items-center shadow-lg">
+    <div class="flex items-center justify-center w-full py-10">
       <div
-        class="flex flex-col w-6/12 sm:w-7/12 lg:w-8/12 bg-blue-900 rounded-r-xl px-7 py-9"
+        class="flex flex-wrap justify-between items-center shadow-lg w-full md:w-[7in] md:h-[9.25in]"
       >
-        <div class="text-3xl text-white pr-7 font-bold tracking-wider">BALAJI</div>
-        <div class="text-xl text-white pr-7">WEB DEVELOPER</div>
-        <Icon class="h-8 w-8 text-white pr-7" name="material-symbols:code"></Icon>
-        <div
-          class="h-[25px] -mx-7 bg-white rounded-r-full w-full mt-4 mb-4"
-        ></div>
-        <div class="flex gap-5">
+        <div class="flex flex-col md:w-7/12 w-full bg-blue-900 px-7 py-9 h-full">
+          <div class="text-3xl text-white pr-7 font-bold tracking-wider">
+            BALAJI
+          </div>
+          <div class="text-xl text-white pr-7">WEB DEVELOPER</div>
+          <Icon
+            class="h-8 w-8 text-white pr-7"
+            name="material-symbols:code"
+          ></Icon>
           <div
-            class="flex gap-1 items-center"
-            v-for="item in socialMedia"
-            :key="item.id"
+            class="h-[25px] -mx-7 bg-white rounded-r-full w-full mt-4 mb-4"
+          ></div>
+          <div class="flex gap-5">
+            <div
+              class="flex gap-1 items-center"
+              v-for="item in socialMedia"
+              :key="item.id"
+            >
+              <Icon
+                class="h-6 w-6 p-1 text-blue-800 bg-white rounded-full"
+                :name="item.icon"
+              ></Icon>
+              <div class="text-xs text-white">{{ item.text }}</div>
+            </div>
+          </div>
+          <div
+            class="-mx-7 bg-white rounded-r-full w-full mt-4 mb-4 pl-5 text-lg text-blue-900 font-bold"
           >
-            <Icon class="h-3 w-3 text-white" :name="item.icon"></Icon>
-            <div class="text-xs text-white">{{ item.text }}</div>
-          </div>
-        </div>
-        <div
-          class="-mx-7 bg-white rounded-r-full w-full mt-4 mb-4 pl-5 text-lg text-blue-900 font-bold"
-        >
-          About Me
-        </div>
-        <div class="w-full text-white pr-7 text-justify text-xs">
-          Lorem Ipsum has been the industry's standard dummy text ever since the
-          1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book.
-        </div>
-        <div
-          class="-mx-7 bg-white rounded-r-full w-full mt-4 mb-4 pl-5 text-lg text-blue-900 font-bold"
-        >
-          Education
-        </div>
-        <div class="flex flex-col gap-2">
-          <div class="w-full text-white pr-7 text-justify text-lg font-bold">
-            BSC - Computer Science
+            About Me
           </div>
           <div class="w-full text-white pr-7 text-justify text-xs">
             Lorem Ipsum has been the industry's standard dummy text ever since
             the 1500s, when an unknown printer took a galley of type and
             scrambled it to make a type specimen book.
           </div>
-          <div class="w-full text-white pr-7 text-justify text-lg font-bold">
-            2018
+          <div
+            class="-mx-7 bg-white rounded-r-full w-full mt-4 mb-4 pl-5 text-lg text-blue-900 font-bold"
+          >
+            Education
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="w-full text-white pr-7 text-justify text-lg font-bold">
+              BSC - Computer Science
+            </div>
+            <div class="w-full text-white pr-7 text-justify text-xs">
+              Lorem Ipsum has been the industry's standard dummy text ever since
+              the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book.
+            </div>
+            <div class="w-full text-white pr-7 text-justify text-lg font-bold">
+              2018
+            </div>
+          </div>
+          <div
+            class="-mx-7 bg-white rounded-r-full w-full mt-4 mb-4 pl-5 text-lg text-blue-900 font-bold"
+          >
+            Experience
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="w-full text-white pr-7 text-justify text-lg font-bold">
+              Source Hov Private Limited - DEVELOPER
+            </div>
+            <div class="w-full text-white pr-7 text-justify text-xs">
+              Lorem Ipsum has been the industry's standard dummy text ever since
+              the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book.
+            </div>
+            <div class="w-full text-white pr-7 text-justify text-lg font-bold">
+              2019
+            </div>
+            <div class="w-full text-white pr-7 text-justify text-lg font-bold">
+              W3web Technologies - Front End Developer
+            </div>
+            <div class="w-full text-white pr-7 text-justify text-xs">
+              Lorem Ipsum has been the industry's standard dummy text ever since
+              the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book.
+            </div>
+            <div class="w-full text-white pr-7 text-justify text-lg font-bold">
+              2021
+            </div>
           </div>
         </div>
-        <div
-          class="-mx-7 bg-white rounded-r-full w-full mt-4 mb-4 pl-5 text-lg text-blue-900 font-bold"
-        >
-          Experience
-        </div>
-        <div class="flex flex-col gap-2">
-          <div class="w-full text-white pr-7 text-justify text-lg font-bold">
-            Source Hov Private Limited - DEVELOPER
-          </div>
-          <div class="w-full text-white pr-7 text-justify text-xs">
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book.
-          </div>
-          <div class="w-full text-white pr-7 text-justify text-lg font-bold">
-            2019
-          </div>
-          <div class="w-full text-white pr-7 text-justify text-lg font-bold">
-            W3web Technologies - Front End Developer
-          </div>
-          <div class="w-full text-white pr-7 text-justify text-xs">
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book.
-          </div>
-          <div class="w-full text-white pr-7 text-justify text-lg font-bold">
-            2021
-          </div>
-        </div>
-      </div>
-      <div class="w-1/12 h-full bg-white">
-        <!-- <div
+        <!-- <div class="w-1/12 h-full bg-white">
+         <div
             class="w-[40px] bg-white h-full rotate-45 -mt-9 -ml-4"
-          ></div> -->
-      </div>
-      <div
-        class="w-5/12 sm:w-4/12 bg-white lg:w-3/12 flex items-center justify-start pr-9 h-full"
-      >
-        <div class="flex items-start justify-start">
-          <div
-            class="w-[120px] h-[120px] overflow-hidden transform bg-black rounded-xl rotate-45"
-          >
-            <img
-              src="/ksk.jpg"
-              alt="Diamond Shape Image"
-              class="inset-0 w-full h-full object-cover transform -rotate-45"
-            />
+          ></div>
+      </div> -->
+        <div class=" md:w-5/12 w-full bg-white flex flex-col py-9 h-full">
+          <div class="flex w-full justify-center mb-10 pt-5">
+            <div
+              class="w-[180px] h-[180px] overflow-hidden transform bg-black rounded-xl rotate-45"
+            >
+              <img
+                src="/ksk.jpg"
+                alt="Diamond Shape Image"
+                class="inset-0 w-full h-full object-cover transform -rotate-45"
+              />
+            </div>
+          </div>
+          <div class="flex flex-col gap-7 px-7">
+            <div class="flex flex-col gap-4">
+              <div class="w-full text-blue-800 text-justify text-lg font-bold">
+                Contact
+              </div>
+              <div class="flex flex-col gap-4">
+                <div
+                  class="flex gap-2 items-center"
+                  v-for="item in contact"
+                  :key="item.id"
+                >
+                  <Icon
+                    class="h-7 w-7 p-1 text-white bg-blue-800 rounded-full"
+                    :name="item.icon"
+                  ></Icon>
+                  <div class="text-sm font-semibold text-blue-800">
+                    {{ item.text }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4">
+              <div class="w-full text-blue-800 text-justify text-lg font-bold">
+                Skills
+              </div>
+              <div
+                class="flex flex-wrap items-center justify-evenly w-full gap-y-5"
+              >
+                <div class="flex flex-col items-center w-1/3">
+                  <div class="relative">
+                    <svg
+                      class="w-16 h-16 transform -rotate-90"
+                      viewBox="0 0 100 100"
+                    >
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="45"
+                        class="stroke-gray-100"
+                        stroke-width="10"
+                        fill="none"
+                      />
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="45"
+                        class="stroke-blue-800"
+                        stroke-width="10"
+                        fill="none"
+                        stroke-dasharray="283"
+                        stroke-dashoffset="70"
+                      />
+                    </svg>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center"
+                    >
+                      <span class="text-xs text-blue-800 font-bold">PHP</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col items-center w-1/3">
+                  <div class="relative">
+                    <svg
+                      class="w-16 h-16 transform -rotate-90"
+                      viewBox="0 0 100 100"
+                    >
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="45"
+                        class="stroke-gray-100"
+                        stroke-width="10"
+                        fill="none"
+                      />
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="45"
+                        class="stroke-blue-800"
+                        stroke-width="10"
+                        fill="none"
+                        stroke-dasharray="283"
+                        stroke-dashoffset="70"
+                      />
+                    </svg>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center"
+                    >
+                      <span class="text-xs text-blue-800 font-bold">JAVA</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col items-center w-1/3">
+                  <div class="relative">
+                    <svg
+                      class="w-16 h-16 transform -rotate-90"
+                      viewBox="0 0 100 100"
+                    >
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="45"
+                        class="stroke-gray-100"
+                        stroke-width="10"
+                        fill="none"
+                      />
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="45"
+                        class="stroke-blue-800"
+                        stroke-width="10"
+                        fill="none"
+                        stroke-dasharray="283"
+                        stroke-dashoffset="70"
+                      />
+                    </svg>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center"
+                    >
+                      <span class="text-xs text-blue-800 font-bold">HTML</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col items-center w-1/3">
+                  <div class="relative">
+                    <svg
+                      class="w-16 h-16 transform -rotate-90"
+                      viewBox="0 0 100 100"
+                    >
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="45"
+                        class="stroke-gray-100"
+                        stroke-width="10"
+                        fill="none"
+                      />
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="45"
+                        class="stroke-blue-800"
+                        stroke-width="10"
+                        fill="none"
+                        stroke-dasharray="283"
+                        stroke-dashoffset="70"
+                      />
+                    </svg>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center"
+                    >
+                      <span class="text-xs text-blue-800 font-bold">CSS</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col items-center w-1/3">
+                  <div class="relative">
+                    <svg
+                      class="w-16 h-16 transform -rotate-90"
+                      viewBox="0 0 100 100"
+                    >
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="45"
+                        class="stroke-gray-100"
+                        stroke-width="10"
+                        fill="none"
+                      />
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="45"
+                        class="stroke-blue-800"
+                        stroke-width="10"
+                        fill="none"
+                        stroke-dasharray="283"
+                        stroke-dashoffset="70"
+                      />
+                    </svg>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center"
+                    >
+                      <span class="text-xs text-blue-800 font-bold">SWIFT</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col items-center w-1/3">
+                  <div class="relative">
+                    <svg
+                      class="w-16 h-16 transform -rotate-90"
+                      viewBox="0 0 100 100"
+                    >
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="45"
+                        class="stroke-gray-100"
+                        stroke-width="10"
+                        fill="none"
+                      />
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="45"
+                        class="stroke-blue-800"
+                        stroke-width="10"
+                        fill="none"
+                        stroke-dasharray="283"
+                        stroke-dashoffset="70"
+                      />
+                    </svg>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center"
+                    >
+                      <span class="text-xs text-blue-800 font-bold">RUBY</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4">
+              <div class="w-full text-blue-800 text-justify text-lg font-bold">
+                Language
+              </div>
+              <div
+                class="flex flex-col items-center justify-evenly w-full gap-5"
+              >
+                <div class="flex flex-col w-full gap-1">
+                  <div
+                    class="w-full text-blue-800 text-justify text-xs font-bold"
+                  >
+                    TAMIL
+                  </div>
+                  <div class="h-1 bg-gray-200 rounded w-full">
+                    <div class="h-full bg-blue-800 rounded w-full"></div>
+                  </div>
+                </div>
+                <div class="flex flex-col w-full gap-1">
+                  <div
+                    class="w-full text-blue-800 text-justify text-xs font-bold"
+                  >
+                    ENGLISH
+                  </div>
+                  <div class="h-1 bg-gray-200 rounded w-full">
+                    <div class="h-full bg-blue-800 rounded w-3/4"></div>
+                  </div>
+                </div>
+                <div class="flex flex-col w-full gap-1">
+                  <div
+                    class="w-full text-blue-800 text-justify text-xs font-bold"
+                  >
+                    SAURASHTRA
+                  </div>
+                  <div class="h-1 bg-gray-200 rounded w-full">
+                    <div class="h-full bg-blue-800 rounded w-1/2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -119,6 +388,20 @@ export default {
         {
           icon: "mdi:instagram",
           text: "balajiksk",
+        },
+      ],
+      contact: [
+        {
+          icon: "ic:baseline-email",
+          text: "balajiksk153@gmail.com",
+        },
+        {
+          icon: "clarity:mobile-line",
+          text: "7010070668",
+        },
+        {
+          icon: "tabler:home",
+          text: "Dindigul,Tamilnadu,India",
         },
       ],
     };
