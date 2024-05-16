@@ -1,4 +1,8 @@
 export default defineNuxtConfig({
+  target: 'static',
+  router: {
+    base: '/balaji_ksk_git/'
+  },
   devtools: { enabled: false },
   modules: ['@nuxtjs/tailwindcss', 'nuxt-icon', '@pinia/nuxt'],
   app: {
@@ -7,9 +11,6 @@ export default defineNuxtConfig({
   css: [
     '@/assets/scss/style.scss'
   ],
-  target: 'static',
-  router: {
-    base: '/balaji_ksk_git/'
-  }
+
 })
 // 
