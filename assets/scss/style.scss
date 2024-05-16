@@ -1,0 +1,26 @@
+.page-leave-active {
+  transition: transform 0.25s ease, opacity 0.125s ease;
+}
+
+.page-enter-to {
+  transition: transform 0.25s ease, opacity 0.125s ease;
+}
+.page-leave {
+  transform: translateX(0); /* Start position */
+  opacity: 1;
+}
+
+.page-leave-to {
+  transform: translateX(100%); /* End position */
+  opacity: 0.5;
+}
+
+.page-enter-active {
+  transform: translateX(-100%); /* Start position */
+  opacity: 1;
+}
+
+.page-enter-to {
+  transform: translateX(0); /* End position */
+  opacity: 0.5;
+}
