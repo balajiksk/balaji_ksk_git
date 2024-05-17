@@ -2,17 +2,16 @@
   <div class="flex flex-col h-full gap-4">
     <div class="flex items-center justify-center w-full pt-5 pb-20">
       <div
-        class="flex flex-wrap justify-between items-center w-full md:w-[7in] md:h-[9.25in]"
+        class="flex flex-wrap justify-between items-center w-full md:w-[7in] md:mh-[9.25in] h-full"
       >
-        <div class="flex flex-col md:w-7/12 w-full bg-blue-900 rounded-t-xl md:rounded-r-none md:rounded-s-xl px-7 py-9 h-full">
+        <div
+          class="flex flex-col md:w-7/12 w-full bg-blue-900 rounded-t-xl md:rounded-r-none md:rounded-s-xl px-7 py-9 h-full"
+        >
           <div class="text-3xl text-white pr-7 font-bold tracking-wider">
             BALAJI
           </div>
           <div class="text-xl text-white pr-7">FRONT END DEVELOPER</div>
-          <Icon
-            class="h-8 w-8 text-white"
-            name="material-symbols:code"
-          ></Icon>
+          <Icon class="h-8 w-8 text-white" name="material-symbols:code"></Icon>
           <div
             class="h-[25px] -mx-7 bg-white rounded-r-full w-full mt-4 mb-4"
           ></div>
@@ -62,28 +61,46 @@
           >
             Experience
           </div>
-          <div class="flex flex-col gap-2">
-            <div class="w-full text-white pr-7 text-justify text-lg font-bold">
-              Source Hov Private Limited - DEVELOPER
+          <div class="flex flex-col gap-3">
+            <div class="flex flex-col gap-2">
+              <div class="flex flex-col gap-0">
+                <div class="w-full text-white pr-7 text-lg font-bold">
+                  Source Hov Private Limited
+                </div>
+                <div class="w-full text-white pr-7 text-md font-semibold">
+                  Bill Processor
+                </div>
+              </div>
+              <div class="w-full text-white pr-7 text-justify text-xs">
+                Lorem Ipsum has been the industry's standard dummy text ever
+                since the 1500s, when an unknown printer took a galley of type
+                and scrambled it to make a type specimen book.
+              </div>
+              <div
+                class="w-full text-white pr-7 text-justify text-lg font-bold"
+              >
+                2019
+              </div>
             </div>
-            <div class="w-full text-white pr-7 text-justify text-xs">
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book.
-            </div>
-            <div class="w-full text-white pr-7 text-justify text-lg font-bold">
-              2019
-            </div>
-            <div class="w-full text-white pr-7 text-justify text-lg font-bold">
-              W3web Technologies - Front End Developer
-            </div>
-            <div class="w-full text-white pr-7 text-justify text-xs">
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book.
-            </div>
-            <div class="w-full text-white pr-7 text-justify text-lg font-bold">
-              2021
+            <div class="flex flex-col gap-2">
+              <div class="flex flex-col gap-0">
+                <div class="w-full text-white pr-7 text-lg font-bold">
+                  W3 web Technologies
+                </div>
+                <div class="w-full text-white pr-7 text-md font-semibold">
+                  Front & Backend Developer
+                </div>
+              </div>
+              <div class="w-full text-white pr-7 text-justify text-xs">
+                Lorem Ipsum has been the industry's standard dummy text ever
+                since the 1500s, when an unknown printer took a galley of type
+                and scrambled it to make a type specimen book.
+              </div>
+              <div
+                class="w-full text-white pr-7 text-justify text-lg font-bold"
+              >
+                2021
+              </div>
             </div>
           </div>
         </div>
@@ -92,7 +109,9 @@
             class="w-[40px] bg-white h-full rotate-45 -mt-9 -ml-4"
           ></div>
       </div> -->
-        <div class=" md:w-5/12 w-full bg-white flex flex-col py-9 h-full  rounded-b-xl md:rounded-l-none md:rounded-e-xl">
+        <div
+          class="md:w-5/12 w-full bg-white flex flex-col py-9 h-full rounded-b-xl md:rounded-l-none md:rounded-e-xl"
+        >
           <div class="flex w-full justify-center mb-10 pt-5">
             <div
               class="w-[180px] h-[180px] overflow-hidden transform bg-black rounded-xl rotate-45"

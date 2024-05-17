@@ -46,7 +46,7 @@
         <span class="text-xs">Video</span>
       </nuxt-link>
       <nuxt-link
-        href="#"
+        href="/settings"
         v-bind:class="
           footer == '/settings' ? 'bg-white' : 'bg-gray-400 hover:bg-gray-200'
         "

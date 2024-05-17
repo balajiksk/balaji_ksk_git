@@ -25,7 +25,7 @@
                     <Icon class="h-full w-full" name="mdi:video" />
                     <span class="text-xs hidden">Video</span>
                </nuxt-link>
-               <nuxt-link href="#" v-bind:class="footer == '/settings' ? 'bg-white' : 'bg-gray-400 hover:bg-gray-200'"
+               <nuxt-link href="/settings" v-bind:class="footer == '/settings' ? 'bg-white' : 'bg-gray-400 hover:bg-gray-200'"
                     class="flex flex-col items-center text-gray rounded-full h-9 w-9 p-2 ">
                     <Icon class="h-full w-full" name="material-symbols:settings" />
                     <span class="text-xs hidden">Settings</span>
