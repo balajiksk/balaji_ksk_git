@@ -7,8 +7,10 @@
         <div
           class="flex flex-col md:w-7/12 w-full bg-blue-900 rounded-t-xl md:rounded-r-none md:rounded-s-xl px-7 py-9 h-full"
         >
-          <div class="text-3xl text-white pr-7 font-bold tracking-wider">
-            BALAJI
+          <div
+            class="text-3xl uppercase text-white pr-7 font-bold tracking-wider"
+          >
+            {{ getLocalStorage("form_name") }}
           </div>
           <div class="text-xl text-white pr-7">FRONT END DEVELOPER</div>
           <Icon class="h-8 w-8 text-white" name="material-symbols:code"></Icon>
@@ -395,6 +397,10 @@
 export default {
   data() {
     return {
+      getLocalStorage(variable) {
+        if (process.client) return JSON.parse(localStorage.getItem(variable));
+        else return null;
+      },
       socialMedia: [
         {
           icon: "ri:facebook-fill",
