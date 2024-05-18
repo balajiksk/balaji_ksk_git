@@ -5,9 +5,7 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in', duration: 250 }
   },
   devtools: { enabled: false },
-  modules: ['@nuxtjs/tailwindcss', 'nuxt-icon', '@pinia/nuxt'],
-
-
+  modules: ['@nuxtjs/tailwindcss', 'vuetify-nuxt-module', 'nuxt-icon', '@pinia/nuxt'],
   css: [
     '@/assets/scss/style.scss'
   ],

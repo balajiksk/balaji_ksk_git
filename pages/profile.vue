@@ -2,7 +2,7 @@
   <div class="flex flex-col h-full gap-4">
     <div class="flex items-center justify-center w-full pt-5 pb-20">
       <div
-        class="flex flex-wrap justify-between items-center w-full md:w-[7in] md:mh-[9.25in] h-full"
+        class="flex flex-wrap justify-between items-center w-full md:w-[7in] md:mh-[9.25in] md:h-full"
       >
         <div
           class="flex flex-col md:w-7/12 w-full bg-blue-900 rounded-t-xl md:rounded-r-none md:rounded-s-xl px-7 py-9 h-full"

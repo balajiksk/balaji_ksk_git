@@ -7,17 +7,22 @@
       <form @submit.prevent="handleSubmit" class="space-y-4">
         <!-- Input Box -->
         <div>
-          <label for="inputBox" class="block text-sm font-medium text-gray-700"
-            >Input Box</label
+          <label
+            for="resume_name"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Name</label
           >
-          <input
-            v-model="formData.inputBox"
-            type="text"
-            id="inputBox"
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-          />
+          <div class="mt-2">
+            <input
+              v-model="formData.inputBox"
+              id="resume_name"
+              name="resume_name"
+              type="text"
+              autocomplete="off"
+              class="block w-full rounded-md outline-0 border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-800 sm:text-sm sm:leading-6"
+            />
+          </div>
         </div>
-
         <!-- Textarea -->
         <div>
           <label for="textarea" class="block text-sm font-medium text-gray-700"
@@ -123,6 +128,7 @@
 </template>
 
 <script setup>
+import { useField, useForm } from 'vee-validate'
 import { ref } from "vue";
 
 const formData = ref({
