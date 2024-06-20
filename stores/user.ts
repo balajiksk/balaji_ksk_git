@@ -4,7 +4,7 @@ import type { Customer, Login, User } from '~/types';
 export const useUserStore = defineStore('user', () => {
   const user = ref();
   const token = useCookie('MY_COOKIE', {
-    maxAge: 60 * 60,
+    maxAge: 60 * 60 * 60,
   });
   const setToken = (data?: string) => { token.value = data };
   const setUser = (data?: any) => { user.value = data };
