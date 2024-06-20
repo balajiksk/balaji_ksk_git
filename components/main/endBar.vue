@@ -20,7 +20,7 @@
                          <span class="text-xs hidden">Profile</span>
                     </nuxt-link>
                </div>
-               <nuxt-link to="#" v-bind:class="footer == '/video' ? 'bg-white' : 'bg-gray-400 hover:bg-gray-200'"
+               <nuxt-link to="/video" v-bind:class="footer == '/video' ? 'bg-white' : 'bg-gray-400 hover:bg-gray-200'"
                     class="flex flex-col items-center text-gray rounded-full h-9 w-9 p-2  ">
                     <Icon class="h-full w-full" name="mdi:video" />
                     <span class="text-xs hidden">Video</span>

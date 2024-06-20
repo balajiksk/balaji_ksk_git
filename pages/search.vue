@@ -1,55 +1,62 @@
 <template>
-  <form @submit.prevent="submit">
-    <v-text-field
-      v-model="name.value.value"
-      :counter="10"
-      :error-messages="name.errorMessage.value"
-      label="Name"
-    ></v-text-field>
+  <v-card>
+    <v-card-item>
+      <v-card-title class="text-center">Resume Creation</v-card-title>
+      <v-card-subtitle>My Custom Template</v-card-subtitle>
+    </v-card-item>
+    <v-card-text>
+      <form @submit.prevent="submit">
+        <div class="flex flex-col gap-2">
+          <v-text-field
+            v-model="name.value.value"
+            :counter="10"
+            :error-messages="name.errorMessage.value"
+            label="Name"
+          ></v-text-field>
 
-    <v-text-field
-      v-model="phone.value.value"
-      :counter="7"
-      :error-messages="phone.errorMessage.value"
-      label="Phone Number"
-    ></v-text-field>
+          <v-text-field
+            v-model="phone.value.value"
+            :counter="7"
+            :error-messages="phone.errorMessage.value"
+            label="Phone Number"
+          ></v-text-field>
 
-    <v-text-field
-      v-model="email.value.value"
-      :error-messages="email.errorMessage.value"
-      label="E-mail"
-    ></v-text-field>
+          <v-text-field
+            v-model="email.value.value"
+            :error-messages="email.errorMessage.value"
+            label="E-mail"
+          ></v-text-field>
 
-    <v-select
-      v-model="select.value.value"
-      :error-messages="select.errorMessage.value"
-      :items="items"
-      label="Select"
-    ></v-select>
+          <v-select
+            v-model="select.value.value"
+            :error-messages="select.errorMessage.value"
+            :items="items"
+            label="Select"
+          ></v-select>
 
-    <v-checkbox
-      v-model="checkbox.value.value"
-      :error-messages="checkbox.errorMessage.value"
-      label="Option"
-      type="checkbox"
-      value="1"
-    ></v-checkbox>
-
-    <v-btn class="me-4" type="submit"> submit </v-btn>
-
-    <v-btn @click="handleReset"> clear </v-btn>
-  </form>
+          <v-checkbox
+            v-model="checkbox.value.value"
+            :error-messages="checkbox.errorMessage.value"
+            label="Option"
+            type="checkbox"
+            value="1"
+          ></v-checkbox>
+          <div class="flex gap-4">
+            <v-btn color="primary" type="submit"> submit </v-btn>
+            <v-btn color="error" @click="handleReset"> clear </v-btn>
+          </div>
+        </div>
+      </form>
+    </v-card-text>
+  </v-card>
 </template>
 <script setup>
 import { ref } from "vue";
 import { useField, useForm } from "vee-validate";
-import { useCounterStore } from "~/store/form_pinia";
 // create a local counter variable that is reactive
 const localCount = ref(0);
 
 // get a reference to the counter store
-const counterStore = useCounterStore();
-
 // increment the local counter and the store counter
 
 const { handleSubmit, handleReset } = useForm({
@@ -87,34 +94,14 @@ const phone = useField("phone");
 const email = useField("email");
 const select = useField("select");
 const checkbox = useField("checkbox");
-let store_name = counterStore.name;
-let store_phone = counterStore.phone;
-let store_email = counterStore.email;
-let store_select = counterStore.select;
-let store_checkbox = counterStore.checkbox;
-if (store_name != "") {
-  name.value.value = store_name;
-  phone.value.value = store_phone;
-  email.value.value = store_email;
-  select.value.value = store_select;
-  checkbox.value.value = store_checkbox;
-} else {
-  name.value.value = "balaji";
-  phone.value.value = "7010070668";
-  email.value.value = "balaji@gmail.com";
-  select.value.value = "Item 1";
-  checkbox.value.value = "1";
-}
+
+name.value.value = "balaji";
+phone.value.value = "7010070668";
+email.value.value = "balaji@gmail.com";
+select.value.value = "Item 1";
+checkbox.value.value = "1";
 
 const items = ref(["Item 1", "Item 2", "Item 3", "Item 4"]);
 
-const submit = handleSubmit((values) => {
-  counterStore.postvalue(
-    values.name,
-    values.phone,
-    values.email,
-    values.select,
-    values.checkbox
-  );
-});
+const submit = handleSubmit((values) => {});
 </script>

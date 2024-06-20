@@ -1,149 +1,326 @@
 <template>
-  <div class="bg-white h-full w-full shadow-2xl rounded-xl p-5">
-    <div class="flex flex-col gap-5 w-full">
-      <div class="text-blue-800 text-3xl font-semibold w-full text-center">
+  <v-card class="!overflow-visible">
+    <v-card-item>
+      <v-card-title class="text-center text-primary !text-2xl !mb-8">
         Create your Stylish Resume
-      </div>
-      <form @submit.prevent="handleSubmit" class="space-y-4">
-        <!-- Input Box -->
-        <div>
-          <label
-            for="resume_name"
-            class="block text-sm font-medium leading-6 text-gray-900"
-            >Name</label
+      </v-card-title>
+      <v-form ref="formRef">
+        <div class="flex flex-col gap-2">
+          <v-text-field
+            clearable
+            v-model="form.clientname"
+            :rules="[rules.required]"
+            label="Name"
+            variant="outlined"
           >
-          <div class="mt-2">
-            <input
-              v-model="formData.inputBox"
-              id="resume_name"
-              name="resume_name"
-              type="text"
-              autocomplete="off"
-              class="block w-full rounded-md outline-0 border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-800 sm:text-sm sm:leading-6"
-            />
+            <template v-slot:prepend-inner>
+              <v-icon>
+                <Icon name="mdi:user"></Icon>
+              </v-icon>
+            </template>
+          </v-text-field>
+
+          <v-text-field
+            clearable
+            v-model="form.email"
+            :rules="[rules.required, rules.email]"
+            label="Email Address"
+            variant="outlined"
+          >
+            <template v-slot:prepend-inner>
+              <v-icon>
+                <Icon name="ic:outline-email"></Icon>
+              </v-icon>
+            </template>
+          </v-text-field>
+
+          <v-text-field
+            clearable
+            v-model="form.mobile"
+            :rules="[rules.required]"
+            label="Mobile Number"
+            variant="outlined"
+          >
+            <template v-slot:prepend-inner>
+              <v-icon>
+                <Icon name="clarity:mobile-solid"></Icon>
+              </v-icon>
+            </template>
+          </v-text-field>
+
+          <v-text-field
+            clearable
+            v-model="form.role"
+            :rules="[rules.required]"
+            label="Role"
+            variant="outlined"
+          >
+            <template v-slot:prepend-inner>
+              <v-icon>
+                <Icon name="material-symbols:work"></Icon>
+              </v-icon>
+            </template>
+          </v-text-field>
+
+          <v-text-field
+            clearable
+            v-model="form.facebook"
+            :rules="[rules.required]"
+            label="Facebook ID"
+            variant="outlined"
+          >
+            <template v-slot:prepend-inner>
+              <v-icon>
+                <Icon name="ri:facebook-fill"></Icon>
+              </v-icon>
+            </template>
+          </v-text-field>
+
+          <v-text-field
+            clearable
+            v-model="form.twitter"
+            :rules="[rules.required]"
+            label="Twitter ID"
+            variant="outlined"
+          >
+            <template v-slot:prepend-inner>
+              <v-icon>
+                <Icon name="prime:twitter"></Icon>
+              </v-icon>
+            </template>
+          </v-text-field>
+
+          <v-text-field
+            clearable
+            v-model="form.instagram"
+            :rules="[rules.required]"
+            label="Instagram ID"
+            variant="outlined"
+          >
+            <template v-slot:prepend-inner>
+              <v-icon>
+                <Icon name="mdi:instagram"></Icon>
+              </v-icon>
+            </template>
+          </v-text-field>
+
+          <v-textarea
+            clearable
+            v-model="form.aboutme"
+            :rules="[rules.required]"
+            label="About Yourself"
+            variant="outlined"
+          >
+            <template v-slot:prepend-inner>
+              <v-icon>
+                <Icon name="mingcute:love-fill"></Icon>
+              </v-icon>
+            </template>
+          </v-textarea>
+
+          <v-textarea
+            clearable
+            v-model="form.address"
+            :rules="[rules.required]"
+            label="Address"
+            variant="outlined"
+          >
+            <template v-slot:prepend-inner>
+              <v-icon>
+                <Icon name="mdi:location"></Icon>
+              </v-icon>
+            </template>
+          </v-textarea>
+          <v-card
+            variant="outlined"
+            class="!border-gray-300 !mb-4"
+            v-for="(field, index) in language"
+            :key="index"
+          >
+            <v-card-item>
+              <v-card-title class="mb-4">
+                <div class="flex justify-between">
+                  <div>Language : {{ index + 1 }}</div>
+                  <v-btn
+                    v-if="index > 0"
+                    type="button"
+                    class="w-fit"
+                    density="compact"
+                    icon
+                    color="error"
+                    @click="removeField(index)"
+                    ><v-icon> <Icon name="mdi:minus"></Icon> </v-icon
+                  ></v-btn>
+                </div>
+              </v-card-title>
+              <div class="flex flex-column gap-2">
+                <v-text-field
+                  clearable
+                  v-model="field.language"
+                  :rules="[rules.required]"
+                  label="Language Name"
+                  variant="outlined"
+                >
+                  <template v-slot:prepend-inner>
+                    <v-icon>
+                      <Icon name="mdi:language"></Icon>
+                    </v-icon>
+                  </template>
+                </v-text-field>
+                <v-radio-group
+                  inline
+                  class="ml-n4"
+                  v-model="field.proficiency"
+                  label="Proficiency"
+                  :rules="[rules.required2]"
+                >
+                  <v-radio
+                    class="pl-4"
+                    :key="index"
+                    v-for="(Proficiency, index) in languageProficiency"
+                    :label="Proficiency"
+                    :value="Proficiency"
+                  ></v-radio>
+                </v-radio-group>
+                <div class="flex flex-column">
+                  <v-label :for="field.comfortable">Comfortable</v-label>
+                  <div class="flex ms-2">
+                    <v-checkbox
+                      v-for="(option, index) in languageComfortable"
+                      :key="index"
+                      :label="option"
+                      :value="option"
+                      v-model="field.comfortable"
+                      :rules="
+                        index === languageComfortable.length - 1
+                          ? [rules.required3]
+                          : [rules.required31]
+                      "
+                    ></v-checkbox>
+                  </div>
+                </div>
+              </div>
+            </v-card-item>
+          </v-card>
+          <div class="flex justify-end align-center gap-2">
+            <v-btn
+              type="button"
+              class="w-fit"
+              density="comfortable"
+              color="primary"
+              rounded
+              @click="addField('Proficiency')"
+            >
+              <v-icon>
+                <Icon name="mdi:add"></Icon>
+              </v-icon>
+              Language
+            </v-btn>
+          </div>
+
+          <div class="flex mt-5 gap-4 justify-center">
+            <v-btn color="primary" @click="submit">Submit</v-btn>
+            <v-btn color="error" @click="handleReset">Clear</v-btn>
           </div>
         </div>
-        <!-- Textarea -->
-        <div>
-          <label for="textarea" class="block text-sm font-medium text-gray-700"
-            >Textarea</label
-          >
-          <textarea
-            v-model="formData.textarea"
-            id="textarea"
-            rows="3"
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-          ></textarea>
-        </div>
-
-        <!-- Select -->
-        <div>
-          <label for="select" class="block text-sm font-medium text-gray-700"
-            >Select</label
-          >
-          <select
-            v-model="formData.select"
-            id="select"
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-          >
-            <option value="" disabled>Select an option</option>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-          </select>
-        </div>
-
-        <!-- Checkbox -->
-        <div>
-          <label class="block text-sm font-medium text-gray-700"
-            >Checkbox</label
-          >
-          <div class="mt-1">
-            <label class="inline-flex items-center">
-              <input
-                v-model="formData.checkbox"
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
-              />
-              <span class="ml-2">Check me</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Radio -->
-        <div>
-          <label class="block text-sm font-medium text-gray-700">Radio</label>
-          <div class="mt-1">
-            <label class="inline-flex items-center">
-              <input
-                v-model="formData.radio"
-                type="radio"
-                name="radio"
-                value="option1"
-                class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
-              />
-              <span class="ml-2">Option 1</span>
-            </label>
-            <label class="inline-flex items-center ml-4">
-              <input
-                v-model="formData.radio"
-                type="radio"
-                name="radio"
-                value="option2"
-                class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
-              />
-              <span class="ml-2">Option 2</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Range -->
-        <div>
-          <label for="range" class="block text-sm font-medium text-gray-700"
-            >Range</label
-          >
-          <input
-            v-model="formData.range"
-            type="range"
-            id="range"
-            min="0"
-            max="100"
-            class="mt-1 block w-full"
-          />
-          <span>{{ formData.range }}</span>
-        </div>
-
-        <!-- Submit Button -->
-        <div>
-          <button
-            type="submit"
-            class="mt-4 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-          >
-            Submit
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
+      </v-form>
+    </v-card-item>
+  </v-card>
 </template>
 
-<script setup>
-import { useField, useForm } from 'vee-validate'
-import { ref } from "vue";
+<script>
+import { defineComponent } from "vue";
+import axios from 'axios'; // Import axios
+export default defineComponent({
+  data() {
+    return {
+      form: {
+        clientname: "",
+        email: "",
+        mobile: "",
+        role: "",
+        facebook: "",
+        twitter: "",
+        instagram: "",
+        aboutme: "",
+        address: "",
+        language: [
+          {
+            language: "",
+            comfortable: ["Speak"],
+            proficiency: "",
+          },
+        ],
+      },
+      languageComfortable: ["Speak", "Read", "Write"],
+      languageProficiency: ["Beginner", "Proficient", "Expert"],
+      rules: {
+        // required: (value) => !!value || "Required.",
+        required: (value) => {
+          return true;
+        },
+        required2: (value) => {
+          return true;
+          return !!value || "Required";
+        },
+        required3: (value) => {
+          return true;
+          return value.length > 0 || "At least one option must be selected";
+        },
+        required31: (value) => {
+          return true;
+          return value.length > 0 || "";
+        },
+        email: (value) => {
+          return true;
+          const pattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+          return pattern.test(value) || "Invalid e-mail.";
+        },
+      },
+    };
+  },
+  computed: {
+    language() {
+      return this.form.language;
+    },
+  },
+  methods: {
+    async submit() {
+      const isValid = await this.$refs.formRef.validate();
+      if (isValid.valid) {
+        try {
+            // Send form data to the server
+            const response = await axios.post('api/resume', {
+              form: this.form,
+            });
 
-const formData = ref({
-  inputBox: "",
-  textarea: "",
-  select: "",
-  checkbox: false,
-  radio: "",
-  range: 50,
+            // Handle response
+            if (response.data.success) {
+              console.log(response.data.data)
+              alert('Form submitted successfully!');
+            } else {
+              alert('Failed to submit form');
+            }
+          } catch (error) {
+            console.error('An error occurred while submitting the form:', error);
+            alert('An error occurred. Please try again.');
+          }
+      }
+    },
+    addField(field) {
+      if (field == "Proficiency")
+        this.form.language.push({
+          language: "",
+          comfortable: ["Speak"],
+          proficiency: "",
+        });
+    },
+    removeField(index) {
+      this.form.language.splice(index, 1);
+    },
+    handleReset() {
+      this.$refs.formRef.reset();
+    },
+  },
 });
-
-const handleSubmit = () => {
-  console.log("Form Data:", formData.value);
-  // Handle form submission
-};
 </script>
-
-<style lang="scss" scoped></style>

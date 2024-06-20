@@ -10,12 +10,20 @@
           <div class="w-full">
                <DashboardTabs></DashboardTabs>
           </div>
+          <div class="w-full">
+               {{ userStore.user }}
+          </div>
 
      </div>
 
 
 </template>
 
-<script>
+<script lang="ts" setup>
+definePageMeta({
+  middleware: ['auth'],
+});
 
+const userStore = useUserStore();
+console.log(userStore.user);
 </script>

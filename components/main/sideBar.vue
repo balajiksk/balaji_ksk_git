@@ -36,7 +36,7 @@
       </nuxt-link>
 
       <nuxt-link
-        to="#"
+        to="/video"
         v-bind:class="
           footer == '/video' ? 'bg-white' : 'bg-gray-400 hover:bg-gray-200'
         "
