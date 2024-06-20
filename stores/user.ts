@@ -25,7 +25,7 @@ export const useUserStore = defineStore('user', () => {
   const fetchCustomer = async () => {
     if (token.value) {
       try {
-        const res = await $fetch<Customer>('http://dummyjson.com/users/1',);
+        const res = await $fetch<Customer>('https://dummyjson.com/users/1',);
         setUser(res);
       } catch (error) {
         setUser();
