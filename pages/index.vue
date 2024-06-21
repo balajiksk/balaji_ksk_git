@@ -20,10 +20,7 @@
 </template>
 
 <script lang="ts" setup>
-definePageMeta({
-  middleware: ['auth'],
-});
 
 const userStore = useUserStore();
-console.log(userStore.user);
+console.log(userStore.token);
 </script>

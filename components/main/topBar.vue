@@ -31,7 +31,7 @@ export default {
     },
     signOut() {
       userStore.logout();
-      useRouter().go(0);
+      // useRouter().go(0);
     },
   },
 };

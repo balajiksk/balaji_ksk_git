@@ -6,7 +6,10 @@ export const useUserStore = defineStore('user', () => {
   const token = useCookie('MY_COOKIE', {
     maxAge: 60 * 60 * 60,
   });
-  const setToken = (data?: string) => { token.value = data };
+  const setToken = (data?: string) => {
+    console.log(data);
+     token.value = data 
+    };
   const setUser = (data?: any) => { user.value = data };
   const signIn = async (data: Login) => {
     try {

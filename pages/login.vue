@@ -12,7 +12,6 @@
 const userStore = useUserStore();
 definePageMeta({
   layout: "login-layout",
-  middleware: ["already-auth"],
 });
 
 const signIn = async () => {
