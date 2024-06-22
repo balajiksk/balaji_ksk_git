@@ -5,9 +5,9 @@
     <div class="flex flex-col gap-3">
       <div class="flex justify-between"></div>
       <nuxt-link
-        to="/"
+        to="/login"
         v-bind:class="
-          footer == '/' ? 'bg-white' : 'bg-gray-400 hover:bg-gray-200'
+          footer == '/login' ? 'bg-white' : 'bg-gray-400 hover:bg-gray-200'
         "
         class="flex gap-2 justify-start items-center text-gray rounded-full h-11 w-full px-4"
       >

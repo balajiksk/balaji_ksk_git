@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     buildAssetsDir: 'assets',
     pageTransition: { name: 'page', mode: 'out-in', duration: 250 }
   },
+  ssr: true,
   devtools: { enabled: false },
   modules: [
     '@nuxtjs/tailwindcss',
@@ -17,5 +18,8 @@ export default defineNuxtConfig({
   ],
   imports: {
     dirs: ['./stores'],
+  },
+  experimental: {
+    cookieStore: true
   }
 })

@@ -21,7 +21,6 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.378.0",
     "lucide-vue-next": "^0.378.0",
-    "nuxt": "^3.11.2",
     "pinia": "^2.1.7",
     "radix-vue": "^1.8.0",
     "sass": "^1.77.1",
@@ -38,6 +37,7 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.12.0",
     "gh-pages": "^6.1.1",
+    "nuxt": "^3.12.2",
     "nuxt-icon": "^0.6.10",
     "nuxt-vuefire": "^1.0.2"
   }
