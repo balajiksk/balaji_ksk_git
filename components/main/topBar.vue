@@ -31,7 +31,7 @@ export default {
     },
     async pushtologin()
     {
-      await navigateTo("/login");
+      await navigateTo("/");
     },
     signOut() {
       userStore.logout();
