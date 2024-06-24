@@ -1,16 +1,29 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
+import { ref } from 'vue';
+import Cookies from 'universal-cookie';
 import type { Customer, Login, User } from '~/types';
 
+const cookies = new Cookies();
+
 export const useUserStore = defineStore('user', () => {
-  const user = ref();
-  const token = useCookie('MY_COOKIE', {
-    maxAge: 60 * 60 * 60,
-  });
+  const user = ref(null);
+  const token = ref(cookies.get('MY_COOKIE') || null);
+
   const setToken = (data?: string) => {
     console.log(data);
-     token.value = data 
-    };
-  const setUser = (data?: any) => { user.value = data };
+    if (data) {
+      token.value = data;
+      cookies.set('MY_COOKIE', data, { path: '/', maxAge: 60 * 60 * 60 });
+    } else {
+      token.value = null;
+      cookies.remove('MY_COOKIE', { path: '/' });
+    }
+  };
+
+  const setUser = (data?: any) => {
+    user.value = data || null;
+  };
+
   const signIn = async (data: Login) => {
     try {
       const res = await $fetch<User>('https://dummyjson.com/auth/login', {
@@ -25,10 +38,11 @@ export const useUserStore = defineStore('user', () => {
       console.log(error);
     }
   };
+
   const fetchCustomer = async () => {
     if (token.value) {
       try {
-        const res = await $fetch<Customer>('https://dummyjson.com/users/1',);
+        const res = await $fetch<Customer>('https://dummyjson.com/users/1');
         setUser(res);
       } catch (error) {
         setUser();
@@ -36,11 +50,11 @@ export const useUserStore = defineStore('user', () => {
       }
     }
   };
+
   const logout = async () => {
-    if (token.value) {
-      setToken();
-      setUser();
-    }
+    setToken();
+    setUser();
   };
+
   return { user, token, logout, signIn, fetchCustomer, setUser, setToken };
-})
+});
