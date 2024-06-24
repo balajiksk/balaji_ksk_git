@@ -31,6 +31,7 @@ export default {
     },
     async pushtologin()
     {
+      console.log("Pushtologin");
       await navigateTo("/");
     },
     signOut() {
