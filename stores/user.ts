@@ -3,14 +3,17 @@ import type { Customer, Login, User } from '~/types';
 
 export const useUserStore = defineStore('user', () => {
   const user = ref();
-  const token = useCookie('MY_COOKIE');
+  const token = useCookie('MY_COOKIE', {
+    secure: true,
+    sameSite: 'Lax'
+  });
   // const token = useCookie('MY_COOKIE', {
   //   maxAge: 60 * 60 * 60,
   // });
   const setToken = (data?: string) => {
     console.log(data);
-     token.value = data 
-    };
+    token.value = data
+  };
   const setUser = (data?: any) => { user.value = data };
   const signIn = async (data: Login) => {
     try {

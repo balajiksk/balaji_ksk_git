@@ -11,7 +11,7 @@
         <span class="text-xs hidden">Search</span>
       </button>
       <img src="/ksk.jpg" class="w-8 h-8" alt="" />
-      <div class="text-white text-lg font-medium tracking-wide">KSK APP</div>
+      <div @click="pushtologin()" class="text-white text-lg font-medium tracking-wide">KSK APP</div>
     </div>
     <div>
       <v-btn @click=signOut class="!px-0" icon="w">
@@ -28,6 +28,10 @@ export default {
   methods: {
     mymethod() {
       useCounterStore().showhide();
+    },
+    async pushtologin()
+    {
+      await navigateTo("/login");
     },
     signOut() {
       userStore.logout();
