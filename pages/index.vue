@@ -62,9 +62,7 @@ async function signin(username, password) {
     password: password,
   });
   if (saveresponse.message) {
-    errormessage.value = "";
     await navigateTo("/profile", { replace: true });
-   
   } else {
     errorMessage.value = "Invalid Credentials.";
     setTimeout(() => {
