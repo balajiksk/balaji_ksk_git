@@ -62,11 +62,12 @@ async function signin(username, password) {
     password: password,
   });
   if (saveresponse.message) {
+    errorMessage.value = "";
     await navigateTo("/profile", { replace: true });
   } else {
     errorMessage.value = "Invalid Credentials.";
     setTimeout(() => {
-      errormessage.value = "";
+      errorMessage.value = "";
     }, 3000);
   }
 }
