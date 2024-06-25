@@ -23,10 +23,16 @@ export const useUserStore = defineStore('user', () => {
       });
       setToken(res.token);
       await fetchCustomer();
+      return {
+        "message": true
+      };
     } catch (error) {
       setToken();
       setUser();
-      console.log(error);
+      return {
+        "message": false
+      };
+
     }
   };
   const fetchCustomer = async () => {

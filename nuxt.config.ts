@@ -19,12 +19,4 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['./stores'],
   },
-  nitro: {
-    storage: {
-      data: {
-        driver: 'vercelKV'
-        /* Vercel KV driver options */
-      }
-    }
-  }
 })
